@@ -2,8 +2,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from database_setup import Sport, Base, SportItem, User
-
-engine = create_engine('sqlite:///sports.db')
+JSON_PATH = '/var/www/catalog/catalogAWS/'
+engine = create_engine('sqlite:///{}'.format(JSON_PATH + 'sports.db'))
+"""engine = create_engine('sqlite:///sports.db')"""
 # Bind the engine to the metadata of the Base class so that the
 # declaratives can be accessed through a DBSession instance
 Base.metadata.bind = engine

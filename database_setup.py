@@ -54,8 +54,8 @@ class SportItem(Base):
             'id': self.id,
         }
 
-
-engine = create_engine('sqlite:///sports.db')
+JSON_PATH = '/var/www/catalog/catalogAWS/'
+engine = create_engine('sqlite:///{}'.format(JSON_PATH + 'sports.db'))
 
 
 Base.metadata.create_all(engine)
